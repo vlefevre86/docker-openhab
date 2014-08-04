@@ -25,11 +25,20 @@ RUN apt-get install -qy openjdk-7-jre unzip curl
 ADD https://github.com/openhab/openhab/releases/download/v1.5.0/distribution-1.5.0-runtime.zip /tmp/distribution-1.5.0-runtime.zip
 ADD https://github.com/openhab/openhab/releases/download/v1.5.0/distribution-1.5.0-addons.zip /tmp/distribution-1.5.0-addons.zip
 
+# Download HABmin
+ADD https://github.com/vlefevre86/docker-openhab/archive/master.zip /tmp/master.zip
+
 # Install Openhab 1.5.0
 RUN mkdir -p /opt/openhab/addons-avail
 RUN unzip -d /opt/openhab /tmp/distribution-1.5.0-runtime.zip
 RUN unzip -d /opt/openhab/addons-avail /tmp/distribution-1.5.0-addons.zip
 RUN chmod +x /opt/openhab/start.sh
+
+# Install HABmin
+RUN unzip -d /opt/openhab/webapps /tmp/master.zip
+RUN mv /opt/openhab/webapps/HABmin-master /opt/openhab/webapps/habmin
+RUN cp /opt/openhab/webapps/habmin/addons/org.openhab.io.habmin*.jar /opt/openhab/webapps/addons
+RUN cp /opt/openhab/webapps/habmin/addons/org.openhab.binding.zwave*.jar /opt/openhab/webapps/addons
 
 # Add boot script
 ADD files/boot.sh /usr/local/bin/boot.sh
