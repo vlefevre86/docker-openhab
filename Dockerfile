@@ -7,8 +7,8 @@ FROM ubuntu:14.04
 MAINTAINER vlefevre86 <vlefevre86@gmail.com>
 
 # Install dependencies
-RUN apt-get update -q
-RUN apt-get install -qy openjdk-7-jre unzip
+RUN apt-get update -y
+RUN apt-get install -y openjdk-7-jre unzip
 
 # Download Openhab 1.5.0
 ADD https://github.com/openhab/openhab/releases/download/v1.5.0/distribution-1.5.0-runtime.zip /tmp/distribution-1.5.0-runtime.zip
