@@ -3,7 +3,7 @@
 # * configuration is injected
 # * addons:
 #
-FROM phusion/baseimage:0.9.11
+FROM phusion/baseimage:latest
 MAINTAINER vlefevre86 <vlefevre86@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
