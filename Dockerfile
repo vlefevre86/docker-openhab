@@ -26,7 +26,7 @@ ADD https://github.com/openhab/openhab/releases/download/v1.5.0/distribution-1.5
 ADD https://github.com/openhab/openhab/releases/download/v1.5.0/distribution-1.5.0-addons.zip /tmp/distribution-1.5.0-addons.zip
 
 # Download HABmin
-ADD https://github.com/vlefevre86/docker-openhab/archive/master.zip /tmp/master.zip
+ADD https://github.com/cdjackson/HABmin/archive/master.zip /tmp/master.zip
 
 # Install Openhab 1.5.0
 RUN mkdir -p /opt/openhab/addons-avail
