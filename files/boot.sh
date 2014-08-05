@@ -4,9 +4,6 @@ DEST=/opt/openhab/addons
 ADDONFILE=/opt/openhab/configurations/addons.cfg
 
 function addons {
-  # Remove all links first
-  rm $DEST/*
-
   # create new links based on input file
   while read STRING
   do
